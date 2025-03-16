@@ -151,9 +151,51 @@
 ![image](https://github.com/user-attachments/assets/b537321c-13e2-49da-b8aa-434e9bebb5d4)
 
 Работа с репозиторием, клонируем репозироторий 
-`sudo git clone https://github.com/maniaa414/Docker-Linux-8.2.25.git`
+`sudo git clone https://github.com/Geraskina/GeraskinaD.git`
 
-![image](https://github.com/user-attachments/assets/0eb12f5e-f5a0-4ccb-8cb8-049bd57339c4)
+![image](https://github.com/user-attachments/assets/b5cdea2b-de07-4c37-b8d8-cc87d0f4ad39)
+
+Переходим в каталог GeraskinaD и смотрим файл
+
+`cd Geraskina`, а после `ls`
+
+![image](https://github.com/user-attachments/assets/3e4b4340-3ec0-4952-834d-2edbe109f837)
+
+`sudo rm README.md` открваем файл `README.md` с правами sudo
+
+![image](https://github.com/user-attachments/assets/19b97f22-84d3-4fcc-b64e-640266f95c70)
+
+Перехожу в каталог `1` и смотрим его содержимое
+`cd 1` и `ls`
+
+![image](https://github.com/user-attachments/assets/6563b540-630d-463c-bf8c-fb301fe741c4)
+
+Смотрим полный путь 
+`pwd`
+
+![image](https://github.com/user-attachments/assets/b69c716a-156b-4632-a4f9-68c604fd5778)
+
+Копирование всех файлов GitHub
+
+![image](https://github.com/user-attachments/assets/9e24bbb2-3b0f-42ba-9a4d-b61e407f7018)
+
+Cоздаеv копию файла prometheus.yaml с именем prometheus.yaml1.
+`cp prometheus.yaml prometheus.yaml1`
+
+![image](https://github.com/user-attachments/assets/7c49a46c-670d-43b9-953e-ba2ab1afc838)
+
+
+`sudo cp prometheus.yaml /mnt/common_volume/swarm/grafana/config`  выполняет копирование файла prometheus.yaml в указанную директорию с использованием sudo
+
+смотрим с помощью `ls`
+
+![image](https://github.com/user-attachments/assets/14a9416d-0f15-430b-8480-33e7199a11bc)
+
+
+
+
+
+
 
 
 
