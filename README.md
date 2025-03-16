@@ -123,6 +123,8 @@
 
 ![image](https://github.com/user-attachments/assets/7e64f271-3a00-4da1-a7ca-7333927d10e7)
 
+Добавляю к себе в GitHub папку с файлами. Файл prometeus.yaml называю сразу правильно 
+
 
 
 
