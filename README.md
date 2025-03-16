@@ -114,8 +114,8 @@
 
 ![image](https://github.com/user-attachments/assets/e344382a-9422-4d51-857a-f827342f0b28)
 
-Получается зайти в Grafana. Ссылка: http//localhost:3000/
-Пароль и логин: admin
+Получается зайти в Grafana. Ссылка: `http//localhost:3000/`
+Пароль и логин: `admin`
 
 ![image](https://github.com/user-attachments/assets/a3b9c10c-cc20-42e1-ac0b-fb4add3ee1b6)
 
@@ -123,7 +123,39 @@
 
 ![image](https://github.com/user-attachments/assets/7e64f271-3a00-4da1-a7ca-7333927d10e7)
 
-Добавляю к себе в GitHub папку с файлами. Файл prometeus.yaml называю сразу правильно 
+Добавляю к себе в GitHub папку с файлами. Файл `prometeus.yaml` называю сразу правильно `prometheus.yaml`
+
+![image](https://github.com/user-attachments/assets/717963b7-4a65-48f0-87b9-42d2c35be0a0)
+
+После того как мы закрыли VM открываем его по новой что бы запустить docker compose нужно ввести эти команды 
+`cd grafana_stack_for_docker` и `sudo docker compose up -d`
+
+Данная команда открывает файл docker-compose.yaml в текстовом редакторе vi с правами суперпользователя, что позволит редактировать его содержимое.
+`sudo vi docker-compose.yaml`
+
+![image](https://github.com/user-attachments/assets/8b698a5e-2d98-4739-bee4-a3baec6bc58d)
+
+Запускаем и создаем контейнеры если те не запущенны
+`sudo docker compose up -d`
+
+![image](https://github.com/user-attachments/assets/8c787f1e-7f6f-4517-b28e-982069601994)
+
+Отсанавливаем запущенные контейнеры без удаления
+`sudo docker compose stop`
+
+![image](https://github.com/user-attachments/assets/6396e6c3-7010-4a94-a1b4-6262abe2a073)
+
+Данная команда используется для оставновки и удаления контейнеров, сетей, томов если они созданы с помощью Docker Compose
+`sudo docker compose down`
+
+![image](https://github.com/user-attachments/assets/b537321c-13e2-49da-b8aa-434e9bebb5d4)
+
+Работа с репозиторием, клонируем репозироторий 
+`sudo git clone https://github.com/maniaa414/Docker-Linux-8.2.25.git`
+
+![image](https://github.com/user-attachments/assets/0eb12f5e-f5a0-4ccb-8cb8-049bd57339c4)
+
+
 
 
 
