@@ -159,40 +159,115 @@
 
 `cd Geraskina`, а после `ls`
 
-![image](https://github.com/user-attachments/assets/3e4b4340-3ec0-4952-834d-2edbe109f837)
-
 `sudo rm README.md` открваем файл `README.md` с правами sudo
-
-![image](https://github.com/user-attachments/assets/19b97f22-84d3-4fcc-b64e-640266f95c70)
 
 Перехожу в каталог `1` и смотрим его содержимое
 `cd 1` и `ls`
 
-![image](https://github.com/user-attachments/assets/6563b540-630d-463c-bf8c-fb301fe741c4)
-
 Смотрим полный путь 
 `pwd`
 
-![image](https://github.com/user-attachments/assets/b69c716a-156b-4632-a4f9-68c604fd5778)
+![image](https://github.com/user-attachments/assets/01065452-5ae1-4097-a01e-0cf0507f934d)
 
 Копирование всех файлов GitHub
+с помощью `sudo cp -r /home/gerasikina/GeraskinaD/1* /home/gerasikina/grafana_stack_for_docker`
 
-![image](https://github.com/user-attachments/assets/9e24bbb2-3b0f-42ba-9a4d-b61e407f7018)
+![image](https://github.com/user-attachments/assets/0fd00c4e-4c9e-43cd-94f0-d207133f7ac0)
+
+Перехожу в config 
+`cd /mnt/common_volume/swarm/grafana/config`
+
+
+![image](https://github.com/user-attachments/assets/6a17581f-9771-4004-98f3-dbf25329e410)
+
 
 Cоздаеv копию файла prometheus.yaml с именем prometheus.yaml1.
-`cp prometheus.yaml prometheus.yaml1`
+`cp prometheus.yaml prometheus.yaml1
 
-![image](https://github.com/user-attachments/assets/7c49a46c-670d-43b9-953e-ba2ab1afc838)
+![image](https://github.com/user-attachments/assets/4a4daad8-d1ff-43ea-aebe-a994880075cf)
 
 
 `sudo cp prometheus.yaml /mnt/common_volume/swarm/grafana/config`  выполняет копирование файла prometheus.yaml в указанную директорию с использованием sudo
+Смотрим с помощью команды `ls`
 
-смотрим с помощью `ls`
+![image](https://github.com/user-attachments/assets/3a4f471c-fa38-480e-8639-855c82c748e4)
 
-![image](https://github.com/user-attachments/assets/14a9416d-0f15-430b-8480-33e7199a11bc)
+![image](https://github.com/user-attachments/assets/4b4968ff-6424-4beb-911a-2cc9be509714)
+
+Открываем файл `docker-compose.yaml` для проверки и редоктирования содержимого
+
+![image](https://github.com/user-attachments/assets/1a1f770f-cbdb-4176-98df-d11c266ffb3b)
+
+Открываем файл `prometheus.yaml` для исправления и проверки
+
+![image](https://github.com/user-attachments/assets/defa77d8-fd5f-44af-91a8-cbfb4fef4cb0)
+
+Переходим на `grafana_stack_for_docker` и запускаем Grafana с помощбю команды `sudo docker compose up -d`
+
+![image](https://github.com/user-attachments/assets/a9fbde1b-d624-492a-98cf-e0f536a1daf0)
+
+Работа с графаной
+
+Переходим по ссылке `http://localhost:3000/`
+
+Вводим и в логин и в пароль `admin`
+
+выбираем вкладку Dashboards и создаем Dashboard
+
+жмем кнопку +Add visualization, а после "Configure a new data source"
+
+![image](https://github.com/user-attachments/assets/3758fdde-0874-455a-876d-77c8dda8f9f1)
 
 
+выбираем Prometheus 
 
+![image](https://github.com/user-attachments/assets/ec8cca0d-ede0-4b2c-acfe-0ae278a9661c)
+
+
+Код Prometheus `http://prometheus:9090`
+
+![image](https://github.com/user-attachments/assets/6d09d261-5338-4da0-bddf-66e86b3b3304)
+
+Ставлю аунтификацию и url prometheus
+
+![image](https://github.com/user-attachments/assets/c70784d3-04c3-4a24-91d1-d1ce094427cb)
+
+Жму на save test и проверяю что все идет отлично
+
+![image](https://github.com/user-attachments/assets/ab74c95a-5353-4248-8e39-0109447cc9d8)
+
+Импортирую 1860 dashboard
+
+![image](https://github.com/user-attachments/assets/e9973feb-c414-445a-a489-5ae64b372e8f)
+
+Выбираю prometheus и импортирую
+
+![image](https://github.com/user-attachments/assets/a28a00b7-1210-4721-95e0-e13ddc4ec24a)
+
+Результат:
+
+![image](https://github.com/user-attachments/assets/57dd4309-8b01-4dbf-a53b-0bd10c7b356f)
+
+После завершения проверок, когда нам надо выключить компьютер мы выполняем следующие команды
+
+`sudo docker compose stop`
+
+![image](https://github.com/user-attachments/assets/1ef87b36-ccc2-4262-b41a-4252c3279802)
+
+
+и после неё
+
+`sudo docker compose down`
+
+![image](https://github.com/user-attachments/assets/28ec6131-2cbe-44bb-ac8d-575de4259048)
+
+Для того чтобы все работало при в следующем включении корректно
+
+Перед тем как заходить в графану нужно ввести, чтобы она заработала
+
+`cd grafana_stack_for_docker`
+
+`sudo docker compose up -d`
 
 
 
