@@ -273,7 +273,20 @@ Cоздаеv копию файла prometheus.yaml с именем prometheus.ya
 Столкнулась с проблемой перед тем как заходить в VictoriaMetrics
 в файле docker-compose.yaml почему то не было VictoriaMetrics
 
-Ввела в ручную 
+Ввела в ручную:
+
+![image](https://github.com/user-attachments/assets/f450d19e-06d6-4690-b09b-a01300ab28f1)
+
+Данный код написан после prometheus
+
+![image](https://github.com/user-attachments/assets/6fceb549-0d30-4bd9-b5be-374fc9501a22)
+
+Но ошибки не прикратились, выдовалось предупреждение. Переводится как: служба «vmagent» ссылается на неопределённый том vmagentdata: недопустимый проект компоновки.
+Ошибка означает, что в файле docker-compose.yml указан использованый том vmagentdata в сервисе vmagent, но не определен этот том в секции volumes нашего файла. Docker Compose не знает, что это за том и как его создать. Поэтому и выходит это предупреждение
+
+![image](https://github.com/user-attachments/assets/9d878a6d-2597-403d-a090-2e2ad733b6cb)
+
+Для решения данной проблемы нужно скопировать 
 
 Вводим команду `echo -e "# TYPE light_metric1 gauge\nlight_metric1 0" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus`
 она отправляет двоичные данные метрики в формате Prometheus, который прослушивает порт 8428
