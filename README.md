@@ -269,11 +269,47 @@ Cоздаеv копию файла prometheus.yaml с именем prometheus.ya
 
 `sudo docker compose up -d`
 
+от 20.03.2025г.
+Столкнулась с проблемой перед тем как заходить в VictoriaMetrics
+в файле docker-compose.yaml почему то не было VictoriaMetrics
+
+Ввела в ручную 
+
+Вводим команду `echo -e "# TYPE light_metric1 gauge\nlight_metric1 0" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus`
+она отправляет двоичные данные метрики в формате Prometheus, который прослушивает порт 8428
+
+![image](https://github.com/user-attachments/assets/78944c6b-abe9-49ee-a59f-f24893766837)
 
 
+Переходим в браузер по ссылке `http:/localhost:8428/`
+Нам открывается меню в котором надо выбрать `vmui`
 
+![image](https://github.com/user-attachments/assets/384ee258-8978-4647-a852-24e371271256)
 
+В открывшееся окно мы вписываем `light_metric1`и жмем на `Execute Query`
 
+![image](https://github.com/user-attachments/assets/2122685e-aa32-4951-8b85-5f7ee68c1b9e)
+
+Вписываем:
+
+Имя: `VikMetrics`
+
+Полключение: http://victoriametrics:8428
+
+![image](https://github.com/user-attachments/assets/b530e30c-6899-4948-a25c-e6be5d1e7bf5)
+
+Вводим `light_metric1` и смотрим на панель с графиком
+
+![image](https://github.com/user-attachments/assets/dcea3499-a358-4a18-b393-ba88f04ad288)
+
+График:
+
+![image](https://github.com/user-attachments/assets/5dbcd59a-2669-46ad-a464-d66dc9014d4f)
+
+Открываем `http://localhost:8428 - vmui`
+все работает
+
+![image](https://github.com/user-attachments/assets/e7c19ed9-5c0b-45f9-bd90-fac766368f2f)
 
 
 
