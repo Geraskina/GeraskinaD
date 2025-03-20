@@ -286,7 +286,19 @@ Cоздаеv копию файла prometheus.yaml с именем prometheus.ya
 
 ![image](https://github.com/user-attachments/assets/9d878a6d-2597-403d-a090-2e2ad733b6cb)
 
-Для решения данной проблемы нужно скопировать 
+Для решения данной проблемы нужно скопировать конец код docker-compose.yaml который находится у нас в GitHub
+
+![image](https://github.com/user-attachments/assets/5a7b23eb-617a-4005-a14e-77eaa04d90ad)
+
+И вставить его в самый конец кода
+
+![image](https://github.com/user-attachments/assets/038870e1-c30d-490f-af76-54c0aa70fd96)
+
+Смотрим что бы команда `sudo docker compose up -d` прошла
+
+![image](https://github.com/user-attachments/assets/594f5add-7837-420c-ab77-dc028aee16f4)
+
+Можем приступать к VictoriaMetrics
 
 Вводим команду `echo -e "# TYPE light_metric1 gauge\nlight_metric1 0" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus`
 она отправляет двоичные данные метрики в формате Prometheus, который прослушивает порт 8428
