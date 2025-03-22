@@ -337,4 +337,19 @@ Cоздаеv копию файла prometheus.yaml с именем prometheus.ya
 ![image](https://github.com/user-attachments/assets/e7c19ed9-5c0b-45f9-bd90-fac766368f2f)
 
 
+Копирование файлов, это не продолжение, этой мой косяк
+1. переходим сюда `cd grafana_stack_for_docker`
+
+2. Этой командой сотрим файлы`ls`
+
+3. Эта команда копирует файл и дает ему название dockere_compose1 `sudo cp docker-compose.yaml docker-compose.yaml1`
+
+4. Выполняем ещё раз команду `ls` смотрним что всее добавилось
+
+![image](https://github.com/user-attachments/assets/3aa6705a-255b-4c04-bf94-7ab532fcab53)
+
+
+
+
+
 
