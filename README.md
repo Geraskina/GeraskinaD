@@ -348,8 +348,27 @@ Cоздаеv копию файла prometheus.yaml с именем prometheus.ya
 
 ![image](https://github.com/user-attachments/assets/3aa6705a-255b-4c04-bf94-7ab532fcab53)
 
+Устанавливаем вторую виртуальную машину: перед началой установки, нужно установить Linux Oracle на VirtualBox, для этого нужно: Иметь образ Linux Выделить 2+ ядер. Выделать 4096+ МБ оперативы, и обязательно при установки мы выбираем английский язык. Пароль: `1234567` Имя: `gerasikinaD`
 
+Устанавливаем гостевые дополнения
 
+![image](https://github.com/user-attachments/assets/26fa5300-6338-4d1d-9966-6f6eb1fd2374)
+
+Устанавливаем утилиту curl, она используется для передачи данных с использованием различных сетевых потоков.
+
+`sudo yum install curl`
+
+![image](https://github.com/user-attachments/assets/17ad1538-550e-4815-8158-e7fe5d313a2e)
+
+Устанавливаем утилиту Wget
+
+`sudo yum install wget`
+
+![image](https://github.com/user-attachments/assets/50422abd-3446-4c9d-b678-f4fdf8f8621d)
+
+Выполняем клонирование удаленного репозитория git, расположенного по указанному url с помощью команды: `git clone https://github.com/skl256/grafana_stack_for_docker.git`
+
+![image](https://github.com/user-attachments/assets/1665de2e-84bd-4844-b04a-6d5c85aeb0f6)
 
 
 
