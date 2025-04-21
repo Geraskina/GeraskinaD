@@ -370,5 +370,74 @@ Cоздаеv копию файла prometheus.yaml с именем prometheus.ya
 
 ![image](https://github.com/user-attachments/assets/1665de2e-84bd-4844-b04a-6d5c85aeb0f6)
 
+Выполняем данную команду `yum install wget tar` - это утилита для работы с архивами. Она часто используется для создания и распаковки архивов в формате .tar, а также для работы с сжатыми архивами, такими как .tar.gz или .tar.bz2. Tar позволяет объединять несколько файлов в один архив, что упрощает их передачу и хранение.
+
+![image](https://github.com/user-attachments/assets/39827161-beb6-4ed4-bfb8-c027152c9448)
+
+Устанавливаем Chrony - используется в системах, основанных на RPM-пакетах (например, CentOS, RHEL, Fedora)
+`yum install chrony`
+
+![image](https://github.com/user-attachments/assets/6674be1c-5b5a-4960-98df-793f5b15964e)
+
+Включаем Chrony `systemctl enable chronyd`
+
+![image](https://github.com/user-attachments/assets/dd427e9b-5887-48fa-95da-6dfc410e41b6)
+
+Запускаем Chrony  `systemctl start chronyd`
+
+![image](https://github.com/user-attachments/assets/a482f24d-b63e-421d-9f8f-b32e6a91e4fe)
+
+Проверяем включен ли getenforce, в данном случае он включен
+
+![image](https://github.com/user-attachments/assets/18547f9a-33ce-4635-ad41-186721001bc0)
+
+Отключаем с помощью двух команд `setenforce 0` и `sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config`
+
+![image](https://github.com/user-attachments/assets/6f4374f1-192a-4aa4-a941-c5e70abeb121)
+
+![image](https://github.com/user-attachments/assets/2e2d2152-b5d7-4971-a3a3-6097df1bcfdd)
+
+Скачакиваю Prometheus. 3.3.0 / 2025-04-15 версия. https://prometheus.io/download/
+`wget https://github.com/prometheus/prometheus/releases/download/v3.3.0/prometheus-3.3.0.linux-amd64.tar.gz`
+
+![image](https://github.com/user-attachments/assets/99865ebc-90af-4d9b-97f1-c5bb39cbf241)
+
+Созданю каталогов для Prometheus `mkdir /etc/prometheus /var/lib/prometheus` с добавлением sudo
+
+![image](https://github.com/user-attachments/assets/16fe4bd6-b168-4cc7-9449-993a6e480b14)
+
+Распаковываю архив Prometheus `tar -zxf prometheus-*.linux-amd64.tar.gz`
+
+![image](https://github.com/user-attachments/assets/e2f3a716-3a51-4193-aeff-cedb58010105)
+
+Перехожу в распакованную папку `cd prometheus-*.linux-amd64`
+
+![image](https://github.com/user-attachments/assets/4eeb19f8-cfa6-43d7-aed1-8d60c57ab11d)
+
+Проверим текущию директорию `pwd`
+
+![image](https://github.com/user-attachments/assets/57e37831-90d7-4d44-afb0-23e5e4c0940b)
+
+Раскидаем по папкам системы файлы Prometheus с помощбю команд:
+`cp prometheus promtool /usr/local/bin/`
+`cp prometheus.yml /etc/prometheus/`
+
+![image](https://github.com/user-attachments/assets/7810a9c5-5eae-415e-bd7e-94c79385f39b)
+
+Очищаем временные файлы с помощью команды `cd .. && rm -rf prometheus-*.linux-amd64/ && rm -f prometheus-*.linux-amd64.tar.gz`
+
+![image](https://github.com/user-attachments/assets/7d70e4ab-bedb-42a9-8b6e-519407de33f7)
+
+Снова выполняем `pwd` для повторной проверки директории
+
+![image](https://github.com/user-attachments/assets/cdbbec7c-8ba7-488a-921a-badb31a9953f)
+
+Выполняем `ls -l` для проверки содержимого в директории
+
+![image](https://github.com/user-attachments/assets/69d658ab-3f0d-434c-84c1-b7bec060347b)
+
+
+
+
 
 
